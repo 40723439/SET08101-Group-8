@@ -126,14 +126,18 @@ document.getElementById("menuToggle").onclick = function () {
     sidebar.style.width = isOpen ? "0" : "250px";
     main.style.marginLeft = isOpen ? "0" : "250px";
 };
-// Credits
-document.getElementById("musicToggle").onclick = function (e) {
-    e.preventDefault(); // Prevent the jump effect
+// Music
+document.getElementById("musicMenuBtn").onclick = function (e) {
+    e.preventDefault();
+    const credits = document.getElementById("musicCredits");
+    credits.style.display = credits.style.display === "block" ? "none" : "block";
+};
+// Music Credits
+document.getElementById("muteToggle").onclick = function () {
     audioMuted = !audioMuted;
     const audio = document.getElementById("sceneAudio");
     audio.muted = audioMuted;
-    const credits = document.getElementById("musicCredits");
-    credits.style.display = credits.style.display === "block" ? "none" : "block";
+    this.innerText = audioMuted ? "🔊 Unmute" : "🔇 Mute";
 };
 
 // Run the function to fetch scenes from JSON
