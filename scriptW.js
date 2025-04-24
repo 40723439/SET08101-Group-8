@@ -127,7 +127,8 @@ document.getElementById("menuToggle").onclick = function () {
     main.style.marginLeft = isOpen ? "0" : "250px";
 };
 // Credits
-document.getElementById("musicToggle").onclick = function () {
+document.getElementById("musicToggle").onclick = function (e) {
+    e.preventDefault(); // Prevent the jump effect
     audioMuted = !audioMuted;
     const audio = document.getElementById("sceneAudio");
     audio.muted = audioMuted;
