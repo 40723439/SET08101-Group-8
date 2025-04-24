@@ -54,17 +54,17 @@ body {
 
 /* Sidebar Music Credits Box */
 #musicCredits {
-    position: absolute;
-    left: 260px;
+    position: fixed;
     top: 60px;
+    left: 260px;
+    width: 300px;
     background-color: #222;
     color: #ccc;
     border: 1px solid #555;
     border-radius: 8px;
-    font-size: 0.9rem;
     padding: 10px 15px;
+    font-size: 0.9rem;
     z-index: 1000;
-    width: 300px;
     display: none;
 }
 
