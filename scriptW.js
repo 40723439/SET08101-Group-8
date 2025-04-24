@@ -80,7 +80,7 @@ function renderScene(sceneId) {
     const imageFile = sceneImageMap[sceneId];
     const altText = sceneImageAltMap[sceneId] || "Scene illustration";
     if (imageFile) {
-        img.src = `images/${imageFile}`;
+        img.src = `imagesW/${imageFile}`;
         img.alt = altText;
         img.style.display = "block";
     } else {
