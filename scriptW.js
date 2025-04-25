@@ -138,7 +138,7 @@ window.onload = () => {
         const musicMenu  = document.getElementById("musicCredits");
         const toggleButton = document.getElementById("musicMenuBtn");
     
-        if (!credits.contains(event.target) && event.target !== toggleButton) {
+        if (!musicMenu.contains(event.target) && event.target !== toggleButton) {
             musicMenu .style.display = "none";
         }
     });
