@@ -65,6 +65,7 @@ function renderScene(sceneId) {
     sceneChoices.innerHTML = "";  
 
     // Load scene image from map
+    const img = document.getElementById("sceneImage");
     const imageData = sceneImageData[sceneId];
     if (imageData) {
         img.src = `imagesW/${imageData.file}`;
