@@ -15,13 +15,12 @@
 
     <!-- Slide-out Sidebar Navigation -->
     <div id="mySidebar">
-        <a href="index.html">Main Menu</a>
+        <a href="index.html" id="mainMenuBtn" title="Go to Main Menu">Main Menu</a>
         <a href="#">Settings</a>
         <a href="#" id="musicMenuBtn" title="Open Music Menu">Music</a>
 
         <div id="musicCredits" style="display:none;">
             <p><strong>🎵 Music Menu</strong></p>
-            <button id="muteToggle" class="btn btn-sm btn-outline-light mb-2">🔇 Mute</button>
             <p><strong>Music by:</strong> <a href="https://www.fesliyanstudios.com" target="_blank" rel="noopener">Fesliyan Studios</a></p>
             <ul>
                 <li><a href="https://www.fesliyanstudios.com/royalty-free-music/download/elven-forest/376">Elven Forest</a></li>
@@ -29,7 +28,6 @@
                 <li><a href="https://www.fesliyanstudios.com/royalty-free-music/download/broken-village/170">Broken Village</a></li>
             </ul>
         </div>
-
     </div>
 
     <!-- Main Story Display Area -->
@@ -43,6 +41,9 @@
         <!-- Temporary karma display until I decide on a better method -->
         <div id="karmaDisplay" class="mt-4"><strong>Karma:</strong> <span id="karma">0</span></div>
     </div>
+
+    <!-- Mute button -->
+    <button id="muteToggle" class="btn btn-sm btn-outline-light mb-2">🔇 Mute</button>
 
     <!-- The Story -->
     <script src="scriptW.js"></script>

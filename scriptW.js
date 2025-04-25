@@ -1,24 +1,13 @@
 // Map sound and images to not have to have multiple copies of MP3/JPG files
-const sceneImageMap = {
-    intro: "placeholder.jpg",
-    start: "placeholder.jpg",
-    king: "placeholder.jpg",
-    plan: "placeholder.jpg",
-    organise: "placeholder.jpg",
-    lure: "placeholder.jpg",
-    friend: "placeholder.jpg",
-    self: "placeholder.jpg"
-};
-
-const sceneImageAltMap = {
-    intro: "placeholder",
-    start: "placeholder",
-    king: "placeholder",
-    plan: "placeholder",
-    organise: "placeholder",
-    lure: "placeholder",
-    friend: "placeholder",
-    self: "placeholder"
+const sceneImageData = {
+    intro: { file: "placeholder.jpg", alt: "placeholder" },
+    start: { file: "placeholder.jpg", alt: "placeholder" },
+    king: { file: "placeholder.jpg", alt: "placeholder" },
+    plan: { file: "placeholder.jpg", alt: "placeholder" },
+    organise: { file: "placeholder.jpg", alt: "placeholder" },
+    lure: { file: "placeholder.jpg", alt: "placeholder" },
+    friend: { file: "placeholder.jpg", alt: "placeholder" },
+    self: { file: "placeholder.jpg", alt: "placeholder" }
 };
 
 const karmaAudioMap = {
@@ -75,17 +64,16 @@ function renderScene(sceneId) {
     const sceneChoices = document.getElementById("sceneChoices");
     sceneChoices.innerHTML = "";  
 
-    // Load scene image
-    const img = document.getElementById("sceneImage");
-    const imageFile = sceneImageMap[sceneId];
-    const altText = sceneImageAltMap[sceneId] || "Scene illustration";
-    if (imageFile) {
-        img.src = `imagesW/${imageFile}`;
-        img.alt = altText;
+    // Load scene image from map
+    const imageData = sceneImageData[sceneId];
+    if (imageData) {
+        img.src = `imagesW/${imageData.file}`;
+        img.alt = imageData.alt;
         img.style.display = "block";
     } else {
         img.style.display = "none";
     }
+    
 
     // Load scene audio
     const audio = document.getElementById("sceneAudio");
@@ -120,7 +108,7 @@ function renderScene(sceneId) {
     
 
 
-// Run the function to fetch scenes from JSON and load menu's etc
+// Run the function to fetch scenes from JSON and load certain  menus
 window.onload = () => {
     loadScenes();
 
@@ -135,14 +123,23 @@ window.onload = () => {
     // Music
     document.getElementById("musicMenuBtn").onclick = function (e) {
         e.preventDefault();
-        const credits = document.getElementById("musicCredits");
-        credits.style.display = credits.style.display === "block" ? "none" : "block";
+        const musicMenu  = document.getElementById("musicCredits");
+        musicMenu .style.display = musicMenu .style.display === "block" ? "none" : "block";
     };
-    // Music Credits
+    // Music button (now in bottom right)
     document.getElementById("muteToggle").onclick = function () {
         audioMuted = !audioMuted;
         const audio = document.getElementById("sceneAudio");
         audio.muted = audioMuted;
-        this.innerText = audioMuted ? "🔊 Unmute" : "🔇 Mute";
-    };
+        this.innerText = audioMuted ? "🔊" : "🔇";
+    };    
+    // Menu click-off
+    document.addEventListener("click", function (event) {
+        const musicMenu  = document.getElementById("musicCredits");
+        const toggleButton = document.getElementById("musicMenuBtn");
+    
+        if (!credits.contains(event.target) && event.target !== toggleButton) {
+            musicMenu .style.display = "none";
+        }
+    });
 };
