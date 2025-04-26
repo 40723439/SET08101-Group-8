@@ -16,10 +16,11 @@ const karmaAudioMap = {
     high: "high.mp3"
 };
 
-
+// Initialise some variables/constants/arrays
 let scenes = {};
 let currentScene = "intro";
 let karma = 0;
+let audioMuted = false;
 
 // Error handling and logging function for fetching JSON because it breaks regularly
 async function loadScenes() {
