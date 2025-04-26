@@ -11,9 +11,9 @@ const sceneImageData = {
 };
 
 const karmaAudioMap = {
-    low: "sad-theme.mp3",
-    neutral: "calm-theme.mp3",
-    high: "high-theme.mp3"
+    low: "low.mp3",
+    neutral: "mid.mp3",
+    high: "high.mp3"
 };
 
 
@@ -81,7 +81,7 @@ function renderScene(sceneId) {
     let mood = "neutral";
     if (karma > 0) mood = "high";
     else if (karma < 0) mood = "low";
-    audio.src = `audio/${karmaAudioMap[mood]}`;
+    audio.src = `soundsW/${karmaAudioMap[mood]}`;
     audio.load();
 
     // Loop through each option
