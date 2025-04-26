@@ -81,8 +81,13 @@ function renderScene(sceneId) {
     let mood = "neutral";
     if (karma > 0) mood = "high";
     else if (karma < 0) mood = "low";
-    audio.src = `soundsW/${karmaAudioMap[mood]}`;
-    audio.load();
+    // Only change audio on karma change instead of every scene
+    const desiredAudio = `audio/${karmaAudioMap[mood]}`;
+    if (audio.src.indexOf(desiredAudio) === -1) {
+        audio.src = desiredAudio;
+        audio.muted = audioMuted;
+        audio.load();
+    }
 
     // Loop through each option
     scene.choices.forEach(option => {
