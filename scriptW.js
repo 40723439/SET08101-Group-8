@@ -117,9 +117,8 @@ function renderScene(sceneId) {
         btn.innerText = option.text;
         // Make the buttons work with karma
         btn.onclick = () => {
-            // Update the temporary karma field
+            // Update karma
             karma = updateKarma(option.next, option.karma);
-            document.getElementById("karma").innerText = karma;
             // Go again
             renderScene(option.next);
         };
