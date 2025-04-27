@@ -122,7 +122,8 @@ body {
 .scene-choices a {
     display: block;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 /*     Images     */
