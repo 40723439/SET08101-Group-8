@@ -1,14 +1,14 @@
 // Map sound and images to not have to have multiple copies of MP3/JPG files
 const sceneImageData = {
-    intro: { file: "intro.png", alt: "placeholder" },
-    start: { file: "start.png", alt: "placeholder" },
-    check: { file: "check.png", alt: "placeholder" },
-    king: { file: "king.png", alt: "placeholder" },
-    plan: { file: "plan.png", alt: "placeholder" },
-    organise: { file: "organise.png", alt: "placeholder" },
-    lure: { file: "lure.png", alt: "placeholder" },
-    friend: { file: "friend.png", alt: "placeholder" },
-    self: { file: "self.png", alt: "placeholder" }
+    intro: { file: "intro.png", alt: "A castle with a dragon looming far overhead." },
+    start: { file: "start.png", alt: "Burnt farmland, the shadow of the city is visable in the distance." },
+    check: { file: "check.png", alt: "A man with a torch face-to-face with a dragon." },
+    king: { file: "king.png", alt: "A peasant stood in front of a king, with the kings court behind him." },
+    plan: { file: "plan.png", alt: "A man at a table looking at old papers concerning dragons, on the table lie various herbs and chemicals." },
+    organise: { file: "organise.png", alt: "A group of men discussing something concerning a sheep stood between them, the same chemicals are nearby on the ground." },
+    lure: { file: "lure.png", alt: "The group of men carrying a sheep, they are talking as they walk." },
+    friend: { file: "friend.png", alt: "A man watching as another takes the sheep into the cave." },
+    self: { file: "self.png", alt: "A man carrying a sheep into a cave." }
 };
 
 const karmaAudioMap = {
