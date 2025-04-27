@@ -1,13 +1,14 @@
 // Map sound and images to not have to have multiple copies of MP3/JPG files
 const sceneImageData = {
-    intro: { file: "placeholder.jpg", alt: "placeholder" },
-    start: { file: "placeholder.jpg", alt: "placeholder" },
-    king: { file: "placeholder.jpg", alt: "placeholder" },
-    plan: { file: "placeholder.jpg", alt: "placeholder" },
-    organise: { file: "placeholder.jpg", alt: "placeholder" },
-    lure: { file: "placeholder.jpg", alt: "placeholder" },
-    friend: { file: "placeholder.jpg", alt: "placeholder" },
-    self: { file: "placeholder.jpg", alt: "placeholder" }
+    intro: { file: "intro.png", alt: "placeholder" },
+    start: { file: "start.png", alt: "placeholder" },
+    check: { file: "check.png", alt: "placeholder" },
+    king: { file: "king.png", alt: "placeholder" },
+    plan: { file: "plan.png", alt: "placeholder" },
+    organise: { file: "organise.png", alt: "placeholder" },
+    lure: { file: "lure.png", alt: "placeholder" },
+    friend: { file: "friend.png", alt: "placeholder" },
+    self: { file: "self.png", alt: "placeholder" }
 };
 
 const karmaAudioMap = {
@@ -83,7 +84,7 @@ function renderScene(sceneId) {
     if (karma > 0) mood = "high";
     else if (karma < 0) mood = "low";
     // Only change audio on karma change instead of every scene
-    const desiredAudio = `audio/${karmaAudioMap[mood]}`;
+    const desiredAudio = `soundsW/${karmaAudioMap[mood]}`;
     if (audio.src.indexOf(desiredAudio) === -1) {
         audio.src = desiredAudio;
         audio.muted = audioMuted;
