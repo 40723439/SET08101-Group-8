@@ -119,6 +119,11 @@ body {
 }
 
 /*  Scene Choices  */
+.scene-choices {
+    max-width: 800px;
+    width: 100%;
+}
+
 .scene-choices a {
     display: block;
     width: 100%;
