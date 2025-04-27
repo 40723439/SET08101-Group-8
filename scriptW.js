@@ -68,6 +68,15 @@ function renderScene(sceneId) {
         // Restarting the game doesn't always lead to intro so to prevent karma staying between runs, OR function is an easy fix.
         return (next === "intro" || next === "start") ? 0 : karma + delta;
     }
+    // Change the karma/morality circle if needed
+    const karmaIndicator = document.getElementById("karmaIndicator");
+    if (karma > 0) {
+        karmaIndicator.style.backgroundColor = "limegreen"; // Positive
+    } else if (karma < 0) {
+        karmaIndicator.style.backgroundColor = "crimson";   // Negative
+    } else {
+        karmaIndicator.style.backgroundColor = "gold";       // Neutral
+    }
 
     // Fetch story content and choices, clear previous choice variable.
     document.getElementById("story").innerHTML = displayText;
