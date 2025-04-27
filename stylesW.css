@@ -25,6 +25,34 @@ body {
     padding: 0 1rem;
 }
 
+/*   Top-right Circles   */
+#topCircles {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mute-button {
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+#karmaIndicator {
+    width: 40px;
+    height: 40px;
+    background-color: gold;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
 /* =================== */
 /*      Sidebar       */
 #mySidebar {
@@ -68,44 +96,19 @@ body {
     z-index: 1000;
     display: none;
 }
-/* ====================== */
-/*   Top-right Circles   */
-#topCircles {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
 
-.mute-button {
-    width: 40px;
-    height: 40px;
-    background-color: #222;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-
-#karmaIndicator {
-    width: 40px;
-    height: 40px;
-    background-color: gold;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
 /* =================== */
 /*       Main         */
 #main {
-    margin-left: 0;
     margin-top: 60px;
     padding: 20px;
     transition: margin-left 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-/* ============= */
 /*   Story Box  */
 .story-box {
     background-color: #f8f9fa;
@@ -115,7 +118,6 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ================ */
 /*  Scene Choices  */
 .scene-choices a {
     display: block;
@@ -123,8 +125,7 @@ body {
     margin-top: 5px;
 }
 
-/* ==================== */
-/*       Images        */
+/*     Images     */
 #sceneImage {
     max-width: 100%;
     height: auto;
