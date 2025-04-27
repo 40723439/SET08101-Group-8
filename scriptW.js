@@ -113,7 +113,7 @@ function renderScene(sceneId) {
         // Create the button for each option
         const btn = document.createElement("a");
         btn.href = "#";
-        btn.className = "btn btn-outline-primary";
+        btn.className = "btn btn-outline-dark";
         btn.innerText = option.text;
         // Make the buttons work with karma
         btn.onclick = () => {
@@ -122,11 +122,8 @@ function renderScene(sceneId) {
             // Go again
             renderScene(option.next);
         };
-
         // Add the button to the choice box from the constant
-        sceneChoices.append(btn);
-
-        
+        sceneChoices.append(btn);        
     });
 }
     
