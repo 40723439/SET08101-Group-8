@@ -23,6 +23,14 @@ let currentScene = "intro";
 let karma = 0;
 let audioMuted = false;
 
+// Preloads images  
+function preloadImages() {
+    Object.values(sceneImageData).forEach(({ file }) => {
+        const img = new Image();
+        img.src = `imagesW/${file}`;
+    });
+}
+
 // Error handling and logging function for fetching JSON because it breaks regularly
 async function loadScenes() {
     try {
@@ -116,8 +124,9 @@ function renderScene(sceneId) {
     
 
 
-// Run the function to fetch scenes from JSON and load certain  menus
+// Run the function to fetch scenes from JSON preload certain menus and fetch images beforehand
 window.onload = () => {
+    preloadImages();
     loadScenes();
 
     // Sidebar
