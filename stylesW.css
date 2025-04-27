@@ -94,7 +94,7 @@ body {
 /*       Main ID         */
 #main {
     margin-left: 0;
-    margin-top: 70px;
+    margin-top: 60px;
     padding: 20px;
     transition: margin-left 0.3s;
 }
@@ -114,7 +114,7 @@ body {
 .scene-choices a {
     display: block;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 /* ===================== */
@@ -122,6 +122,7 @@ body {
 #sceneImage {
     max-width: 100%;
     height: auto;
+    max-height: 300px;
     display: block;
     margin-bottom: 1rem;
     border-radius: 8px;
