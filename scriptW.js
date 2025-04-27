@@ -117,6 +117,11 @@ function renderScene(sceneId) {
         btn.innerText = option.text;
         // Make the buttons work with karma
         btn.onclick = () => {
+            // Check if music is playing with HTML5 API, if not, play on button press (browser security workaround)
+            const audio = document.getElementById("sceneAudio"); 
+            if (audio.paused) {
+                audio.play().catch(err => console.log("Audio play blocked:", err));
+            }
             // Update karma
             karma = updateKarma(option.next, option.karma);
             // Go again
