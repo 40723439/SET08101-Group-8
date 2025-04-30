@@ -1,5 +1,5 @@
 // Map sound and images to not have to have multiple copies of MP3/JPG files
-const sceneImageData = {
+const imgMap = {
     intro: { file: "intro.png", alt: "A castle with a dragon looming far overhead." },
     start: { file: "start.png", alt: "Burnt farmland, the shadow of the city is visable in the distance." },
     check: { file: "check.png", alt: "A man with a torch face-to-face with a dragon." },
@@ -11,7 +11,7 @@ const sceneImageData = {
     self: { file: "self.png", alt: "A man carrying a sheep into a cave." }
 };
 
-const karmaAudioMap = {
+const audioMap = {
     low: "low.mp3",
     neutral: "mid.mp3",
     high: "high.mp3"
@@ -24,8 +24,8 @@ let karma = 0;
 let audioMuted = false;
 
 // Preloads images  
-function preloadImages() {
-    Object.values(sceneImageData).forEach(({ file }) => {
+function cacheAllImages() {
+    Object.values(imgMap).forEach(({ file }) => {
         const img = new Image();
         img.src = `imagesW/${file}`;
     });
@@ -85,7 +85,7 @@ function renderScene(sceneId) {
 
     // Load scene image from map
     const img = document.getElementById("sceneImage");
-    const imageData = sceneImageData[sceneId];
+    const imageData = imgMap[sceneId];
     if (imageData) {
         img.src = `imagesW/${imageData.file}`;
         img.alt = imageData.alt;
@@ -96,12 +96,12 @@ function renderScene(sceneId) {
     
 
     // Load scene audio
-    const audio = document.getElementById("sceneAudio");
+    let audio = document.getElementById("sceneAudio");
     let mood = "neutral";
     if (karma > 0) mood = "high";
     else if (karma < 0) mood = "low";
     // Only change audio on karma change instead of every scene
-    const desiredAudio = `soundsW/${karmaAudioMap[mood]}`;
+    const desiredAudio = `soundsW/${audioMap[mood]}`;
     if (audio.src.indexOf(desiredAudio) === -1) {
         audio.src = desiredAudio;
         audio.muted = audioMuted;
@@ -134,9 +134,9 @@ function renderScene(sceneId) {
     
 
 
-// Run the function to fetch scenes from JSON preload certain menus and fetch images beforehand
+// Run the function to fetch scenes from JSON load certain menus and fetch images beforehand
 window.onload = () => {
-    preloadImages();
+    cacheAllImages();
     loadScenes();
 
     // Sidebar
