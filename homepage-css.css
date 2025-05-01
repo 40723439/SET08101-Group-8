@@ -27,6 +27,8 @@ body {
   background-image: url('https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/1272/cached.offlinehbpl.hbpl.co.uk/news/KMP/Napierwebsitecasestudy-01Cropped.png');
   background-size: cover;
   background-position: center;
+  z-index: -1;
+  filter: brightness(0.5);
 }
 
 h1 {
